@@ -121,7 +121,7 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 import os 
 MEDIA_URL = '/media/'
-MEDUA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 
