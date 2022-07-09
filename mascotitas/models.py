@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from msilib.schema import Class
 from operator import mod
 from django.db import models
@@ -16,6 +17,7 @@ class Producto(models.Model):
     nuevo = models.BooleanField()
     marca = models.ForeignKey(Marca, on_delete=models.PROTECT)
     fecha_fabricacion = models.DateTimeField()
+    imagen = models.ImageField(upload_to="productos", null=True)
 
     def __str__(self):
         return self.nombre
