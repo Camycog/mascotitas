@@ -26,7 +26,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mascotitas.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+<<<<<<< HEAD
     
+=======
+    path('accounts/login/', views.login, name='login'),
+>>>>>>> 3986baff16920ab748eecf7e60ddb6adf9dd7d82
 ]
 
 if settings.DEBUG:
