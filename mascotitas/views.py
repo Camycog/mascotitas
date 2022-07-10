@@ -84,6 +84,8 @@ def registro(request):
         formulario = CustomUserCreationForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
+            user = authenticate(username=formulario.cleaned_data("username"),password=formulario.cleaned_data("password1"))
+            login(request, user)
             return redirect(to="home")
         data["form" ]= formulario   
     return render(request, 'mascotitas/registration/registro.html', data)
