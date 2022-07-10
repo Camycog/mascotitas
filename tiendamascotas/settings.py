@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mascotitas',
     'colorfield',
+    'django.contrib.humanize',
+    
 
 ]
 X_FRAME_OPTIONS = 'SAMEORIGIN'
