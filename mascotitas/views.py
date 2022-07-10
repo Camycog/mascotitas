@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404
 from .models import Producto
-from .forms import ContactoForm
+from .forms import ContactoForm, ProductoForm
 
 
 
@@ -29,4 +29,7 @@ def contacto(request):
     return render(request, 'mascotitas/contacto.html', data)
 
 def agregar_producto(request):
-    return render(request, 'mascotitas/producto/agregar.html')
+    data = {
+        'form': ProductoForm()
+    }
+    return render(request, 'mascotitas/producto/agregar.html', data)
