@@ -5,7 +5,7 @@
 <div class="producto">
     {%for p in productos %}
     <div class="producto">
-        <div class="contenedor_producto">
+        <div class="contenedor_producto" id="contenedor">
             {% if p.imagen %}
             <img src="{{ p.imagen.url }}" alt="imagen producto">
             {% endif %}
