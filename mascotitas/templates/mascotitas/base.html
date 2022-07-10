@@ -54,15 +54,17 @@
           </form>
           {% if user.is_authenticated %}
           <li>
-            <a class="nav-link text-nowrap" href="">Hola, {{ user.username }}</a>
+            <a class="nav-link text-nowrap" href="#">Hola, {{ user.username }}</a>
           </li>
           <li>
             <a class="nav-link text-nowrap" href="{% url 'logout' %}">Cerrar sesion</a>
           </li>
-          {% else %}    
+          {% else %}             
             <a class="nav-link text-nowrap" href="{% url 'login' %}">Iniciar sesion</a>
-            &nbsp; &nbsp; 
+          <li>
             <a class="nav-link text-nowrap" href="{% url 'registro' %}">Registrate</a>
+          </li> 
+          </li>
           {% endif %}
         </div>
       </div>
