@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import Http404
 from .models import Producto
 from .forms import ContactoForm, ProductoForm
-from django.contrib.auth import authenticate, login
 
 
 
