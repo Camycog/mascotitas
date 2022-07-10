@@ -32,4 +32,12 @@ def agregar_producto(request):
     data = {
         'form': ProductoForm()
     }
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Guardado correctamente"
+        else:
+            data["form"] = formulario
+            
     return render(request, 'mascotitas/producto/agregar.html', data)

@@ -10,7 +10,7 @@
             <h2>Nuevo producto</h2>
             <hr>
             <div class="col-12 col-md-6 offset-md-3">
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }} 
 
@@ -22,6 +22,7 @@
 
 
                 </form>
+                {{mensaje}}
             </div>
         </div>
     </div>
