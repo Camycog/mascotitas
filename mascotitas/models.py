@@ -23,9 +23,9 @@ class Producto(models.Model):
         return self.nombre
 
 opciones_consultas = [
-    [0, "consulta"]
-    [1, "solicitud"]
-    [2, "sugerencia"]
+    [0, "consulta"],
+    [1, "solicitud"],
+    [2, "sugerencia"],
     [3, "felicitaciones"]
     ]
 
