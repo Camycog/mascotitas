@@ -9,4 +9,16 @@
     text-align: center;
     margin: 100px;
     font-size: 30px;
+    color: #8CBDBD;
+}
+
+#item {
+    background:  #D1E6D5;
+    color: #8CBDBD;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    display: flex;
+
+
 }
