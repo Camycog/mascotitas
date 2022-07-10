@@ -1,6 +1,8 @@
 {% extends 'mascotitas/base.html' %}
 {% block contenido %}
-<form action="" class="formulario_contacto" >
+<form action="" class="formulario_contacto" method="post">
+
+    {% cssrf_token %}
 
     {{ form }}
 
