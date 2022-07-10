@@ -4,7 +4,7 @@ from .models import Producto
 from .forms import ContactoForm, CustomUserCreationForm, ProductoForm
 from django.contrib import messages
 from django.http import Http404
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,login
 
 # Create your views here.
 def home(request):
