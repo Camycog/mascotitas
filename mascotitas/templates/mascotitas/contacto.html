@@ -1,7 +1,7 @@
 {% extends 'mascotitas/base.html' %}
-
-{% block contenido %}
 {% load crispy_forms_tags %}
+{% block contenido %}
+
 <br>
 <br>
 <div class="row">
@@ -12,7 +12,7 @@
         <hr>
         <form action="" class="" method="post">
             {% csrf_token %}       
-            {{ form | crispy }}       
+            {{ my_formset| crispy }}       
         <br>
         <div class="d-flex justify-contend-end">
             <input type="reset" value="Cancelar" class="btn btn-secondary">   

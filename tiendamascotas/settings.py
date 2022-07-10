@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--%^9&&9r0m0!dakuu#m3cu1y79zg03&3%nqs#4$5$_o451q5^3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1' , 'pythonanywhere.com']
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -43,14 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mascotitas',
     'colorfield',
-    'django.contrib.humanize',
     'crispy_forms',
+    'django.contrib.humanize',
+
     
 ]
-
-CRISPY_TEMPLATE_PACK= 'uni_form'
-
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+CRISPY_TEMPLATE_PACK = 'bootstrap'
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
