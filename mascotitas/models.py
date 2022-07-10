@@ -2,6 +2,7 @@ from distutils.command.upload import upload
 from msilib.schema import Class
 from operator import mod
 from django.db import models
+from .models import *
 
 # Create your models here.
 class Marca(models.Model):
