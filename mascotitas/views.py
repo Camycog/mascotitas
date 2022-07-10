@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import Http404
 from .models import Producto
 from .forms import ContactoForm, ProductoForm
-from django.contrib
+from django.contrib import messages
 
 
 # Create your views here.
@@ -65,6 +65,7 @@ def modificar_producto(request, id):
             formulario = ProductoForm(data=request.POST, instance=producto, files=request.FILES)
             if formulario.is_valid():
                 formulario.save()
+                messages.success(request, "Modificado correctamente")
                 return redirect(to="listar_productos")
             data["form"] = formulario
     return render(request, 'mascotitas/producto/modificar.html', data)
@@ -72,6 +73,7 @@ def modificar_producto(request, id):
 def eliminar_producto(request, id):
     producto = get_object_or_404(Producto, id=id)
     producto.delete()
+    messages.success(request, "Eliminado correctamente")
     return redirect(to="listar_productos")
 
 
