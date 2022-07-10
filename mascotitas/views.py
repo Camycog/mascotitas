@@ -76,5 +76,6 @@ def eliminar_producto(request, id):
     messages.success(request, "Eliminado correctamente")
     return redirect(to="listar_productos")
 
-
+def registro(request):
+    return render(request, 'mascotitas/registration/registro.html')
 
