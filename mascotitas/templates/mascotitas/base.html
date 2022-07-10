@@ -13,7 +13,62 @@
   <link rel="stylesheet" href="{% static 'mascotitas/css/estilos.css' %}">
   </head>
   <body id="bg">
-
+    <header>
+      <div class="px-3 py-2 text-white" style="background-color: #C5D8AB;">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+              <img src="{% static 'mascotitas/img/Logo1.jpg'  %}" alt="logo" width="120" height="100">
+            </a>
+            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+              <li>
+                <a href="#" class="nav-link text-secondary">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
+                  Inicio
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-secondary">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                  Productos
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-secondary">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="{% url 'contacto' %}"/></svg>
+                  Contacto
+                </a>
+              </li>
+                  <li>
+                    <a href="#" class="nav-link text-secondary">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                      Carrito
+                    </a>
+                  </li>    
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="px-3 py-2 border-bottom mb-3">
+        <div class="container d-flex flex-wrap justify-content-center" id="flex-end">
+          <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+          </form>
+          {% if user.is_authenticated %}
+          <li>
+            <a class="nav-link text-nowrap" href="#">Hola, {{ user.username }}</a>
+          </li>
+          <li>
+            <a class="nav-link text-nowrap" href="{% url 'logout' %}">Cerrar sesion</a>
+          </li>
+          {% else %}    
+            <a class="nav-link text-nowrap" href="{% url 'login' %}">Iniciar sesion</a>
+            &nbsp; &nbsp; 
+            <a class="nav-link text-nowrap" href="#">Registrate</a>
+          {% endif %}
+        </div>
+      </div>
+    </header>
   <div id="contenido">
     {% if messages %}
     {% for m in messages %}
