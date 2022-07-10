@@ -1,5 +1,7 @@
 #bg {
     background-image: url('../img/Fondo.png');
-    
+    background-size: 90% 90%;
+    background-position: center center !important;
+    background-size: cover !important;
 }
 
