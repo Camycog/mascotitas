@@ -26,9 +26,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mascotitas.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+<<<<<<< HEAD
     
 ]
 
+=======
+    path('accounts/login/', views.login, name='login'),
+    ]
+>>>>>>> d6c83c2f54054a180af99424df573276b9737f06
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
 
