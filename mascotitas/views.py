@@ -86,7 +86,7 @@ def registro(request):
             login(request, user)
             return redirect(to="home")
         data["form" ]= formulario   
-    return render(request, 'mascotitas/registration/registro.html', data)
+    return render(request, 'registration/registro.html', data)
 
 def productos(request):
     productos = Producto.objects.all()
