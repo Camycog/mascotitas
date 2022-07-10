@@ -50,11 +50,11 @@
         <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
           <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
         </form>
-
-        <div class="text-end">
-          <button type="button" class="btn btn-light text-dark me-2">Iniciar sesion</button>
-          <button type="button" class="btn btn-light text-dark me-2">Registrate</button>
-        </div>
+        {% if user.authenticated %}
+          <a href="{% url 'logout'%}">Cerrar Sesion</a>
+        {% else %}
+          <a href
+        {% endif %}
       </div>
     </div>
   </header>
