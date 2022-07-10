@@ -19,6 +19,10 @@
     align-items: center;
     height: 10rem;
     display: flex;
+}
 
+#owl-container{
+    margin: auto;
+    max-width: 80%;
 
 }
