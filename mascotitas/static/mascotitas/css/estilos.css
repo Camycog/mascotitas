@@ -5,3 +5,10 @@
     background-size: cover !important;
 }
 
+#title {
+    text-align: center;
+    margin: 100px;
+    font-size: 80px;
+    
+
+}
