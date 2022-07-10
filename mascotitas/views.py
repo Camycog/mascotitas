@@ -1,6 +1,6 @@
 from itertools import product
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Producto
+from .models import *
 from .forms import ContactoForm, CustomUserCreationForm, ProductoForm
 from django.contrib import messages
 from django.http import Http404
