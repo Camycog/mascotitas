@@ -1,7 +1,7 @@
 from unicodedata import name
 from django.urls import path, include
-from .views import home, contacto, agregar_producto, listar_productos, modificar_producto 
-from .views import eliminar_producto, registro, productos
+from .views import home, contacto, agregar_producto, listar_productos, modificar_producto,eliminar_producto, registro, productos
+
 
 urlpatterns = [
     path('', home, name="home"),
