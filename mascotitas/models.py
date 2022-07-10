@@ -1,5 +1,6 @@
 from distutils.command.upload import upload
 from msilib.schema import Class
+from django.conf import settings
 from operator import mod
 from django.db import models
 from .models import *

@@ -48,11 +48,9 @@ INSTALLED_APPS = [
     'mascotitas',
     'colorfield',
     'crispy_forms',
-    'django.contrib.humanize',
-
-
-    
+    'django.contrib.humanize'  
 ]
+
 CRISPY_TEMPLATE_PACK = 'uni_form'
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
@@ -71,7 +69,7 @@ ROOT_URLCONF = 'tiendamascotas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
