@@ -1,9 +1,15 @@
 {% extends 'mascotitas/base.html' %}
 {% block contenido %}
 {% load humanize %}
-<h2>Pagina Principal</h2>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principal</title>
+</head>
+<body>
 
 <div class="producto">
     {%for p in productos %}
@@ -21,6 +27,7 @@
         </div>
         </div>
     </div>
-
 {% endfor %}
+</body>
+</html>
 {% endblock %}
