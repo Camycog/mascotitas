@@ -27,3 +27,6 @@ def contacto(request):
             data["form"] = formulario
 
     return render(request, 'mascotitas/contacto.html', data)
+
+def agregar_producto(request):
+    return render(request, 'mascotitas/producto/agregar.html')
