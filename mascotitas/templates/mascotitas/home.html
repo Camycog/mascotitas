@@ -1,5 +1,22 @@
 {% extends 'mascotitas/base.html' %}
 {% block contenido %}
-<h2>Este es la pagina principal</h2>
 
+<h2>Productos</h2>
+<div class="productos">
+    {%for p in productos %}
+
+    <div class="producto">
+
+        <div class="contenedor_producto">
+
+            <img src="media" alt="imagen producto">
+            <div class="detalle"g>
+                <h5>{{ p.marca }}</h5>
+                <h2>{{ p.nombre }}</h2>
+                <h3>${{ p.precio }}</h3>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
 {% endblock %}
