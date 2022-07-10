@@ -2,6 +2,7 @@ from dataclasses import fields
 from stat import FILE_ATTRIBUTE_NOT_CONTENT_INDEXED
 from django import forms
 from .models import Contacto, Producto
+from django.contrib.auth.forms import UserCreationForm
 
 class ContactoForm(forms.ModelForm):
 
@@ -19,3 +20,6 @@ class ProductoForm(forms.ModelForm):
         widgets = {
             "fecha_fabricacion": forms.SelectDateWidget()
             }
+
+class CustomUserCreationForm(UserCreationForm):
+    pass
