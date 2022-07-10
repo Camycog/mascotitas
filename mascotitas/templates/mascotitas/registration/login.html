@@ -21,7 +21,7 @@
           <div class="card-body">
             <h2>Iniciar Sesion</h2>
             <hr>
-            <form action="" method="post">
+            <form action="" method="post" class="login-form">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <br>                
