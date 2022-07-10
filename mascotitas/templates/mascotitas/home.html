@@ -8,8 +8,10 @@
     <div class="producto">
 
         <div class="contenedor_producto">
+            {% if p.imagen %}
 
-            <img src="media" alt="imagen producto">
+            <img src="{{ p.imagen.url }}" alt="imagen producto">
+            {% endif %}
             <div class="detalle"g>
                 <h5>{{ p.marca }}</h5>
                 <h2>{{ p.nombre }}</h2>
