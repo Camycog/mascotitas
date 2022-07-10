@@ -1,10 +1,9 @@
 from itertools import product
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import Http404
 from .models import Producto
-from .forms import ContactoForm, ProductoForm
+from .forms import ContactoForm, CustomUserCreationForm, ProductoForm, CustomCreationForm
 from django.contrib import messages
-
+from django.http import Http404
 
 # Create your views here.
 def home(request):
@@ -77,5 +76,8 @@ def eliminar_producto(request, id):
     return redirect(to="listar_productos")
 
 def registro(request):
-    return render(request, 'mascotitas/registration/registro.html')
+    data = {
+        'form': CustomUserCreationForm()
+    }
+    return render(request, 'mascotitas/registration/registro.html', data)
 
