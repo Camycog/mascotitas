@@ -1,10 +1,13 @@
 from unicodedata import name
 from django.urls import path, include
-from .views import home, contacto, agregar_producto
+from .views import home, contacto, agregar_producto, listar_productos, modificar_producto
 
 
 urlpatterns = [
     path('', home, name="home"),
     path('contacto/', contacto, name="contacto"),
-    path('agregar-producto/', agregar_producto, name="agregar_producto")
+    path('agregar-producto/', agregar_producto, name="agregar_producto"),
+    path('listar-productos/', listar_productos, name="listar_productos"),
+    path('modificar-producto/<id>/', modificar_producto, name="modificar_producto"),
+    
 ]
