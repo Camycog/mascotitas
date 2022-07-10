@@ -5,9 +5,9 @@
 <div class="producto">
     {%for p in productos %}
     <div class="producto">
-        <div class="contenedor_producto">
+        <div class="contenedor_producto" id="contenedor">
             {% if p.imagen %}
-            <img src="{{ p.imagen.url }}" alt="imagen producto">
+            <img src="{{ p.imagen.url }}" alt="imagen producto" width="20%" height="20%">
             {% endif %}
             <div class="detalle" >
                 <h5>{{ p.marca | capfirst }}</h5>
