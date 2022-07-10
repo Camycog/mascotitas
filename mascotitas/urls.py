@@ -6,7 +6,6 @@ from .views import home, contacto, agregar_producto, listar_productos, modificar
 urlpatterns = [
     path('', home, name="home"),
     path('contacto/', contacto, name="contacto"),
-
     path('agregar-producto/', agregar_producto, name="agregar_producto"),
     path('listar-productos/', listar_productos, name="listar_productos"),
     path('modificar-producto/<id>/', modificar_producto, name="modificar_producto"),
