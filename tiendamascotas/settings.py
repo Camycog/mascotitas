@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['127.0.0.1' , 'pythonanywhere.com']
 
 MESSAGES_STORAGE = "django.contrib.messages.strorage.cookie.CookieStrorage"
 
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 

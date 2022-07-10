@@ -34,8 +34,8 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="nav-link text-secondary">
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="{% url 'contacto' %}"/></svg>
+                <a href="{% url 'contacto' %}" class="nav-link text-secondary">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#contacto"/></svg>
                   Contacto
                 </a>
               </li>
@@ -56,7 +56,7 @@
           </form>
           {% if user.is_authenticated %}
           <li>
-            <a class="nav-link text-nowrap" href="#">Hola, {{ user.username }}</a>
+            <a class="nav-link text-nowrap" href="">Hola, {{ user.username }}</a>
           </li>
           <li>
             <a class="nav-link text-nowrap" href="{% url 'logout' %}">Cerrar sesion</a>
@@ -64,7 +64,7 @@
           {% else %}    
             <a class="nav-link text-nowrap" href="{% url 'login' %}">Iniciar sesion</a>
             &nbsp; &nbsp; 
-            <a class="nav-link text-nowrap" href="#">Registrate</a>
+            <a class="nav-link text-nowrap" href="{% url 'registro' %}">Registrate</a>
           {% endif %}
         </div>
       </div>
