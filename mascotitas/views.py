@@ -4,6 +4,7 @@ from .models import Producto
 from .forms import ContactoForm, CustomUserCreationForm, ProductoForm
 from django.contrib import messages
 from django.http import Http404
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 def home(request):
@@ -83,7 +84,7 @@ def registro(request):
         formulario = CustomUserCreationForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            #redirigir al home
+            return redirect(to="home")
         data["form" ]= formulario   
     return render(request, 'mascotitas/registration/registro.html', data)
 
