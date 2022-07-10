@@ -1,10 +1,11 @@
 {% extends 'mascotitas/base.html' %}
 {% block contenido %}
+{% load crispy_forms_tags %}
 <form action="" class="formulario_contacto" method="post">
 
     {% csrf_token %}
 
-    {{ form }}
+    {{ form | crispy }}
 
 
     

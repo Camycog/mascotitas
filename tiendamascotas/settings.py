@@ -41,9 +41,10 @@ INSTALLED_APPS = [
     'mascotitas',
     'colorfield',
     'django.contrib.humanize',
+    'crispy_forms',
     
-
 ]
+CRISPY_TEMPLATE_PACK= 'bootstrap4'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
