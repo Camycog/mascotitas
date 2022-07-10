@@ -50,9 +50,7 @@ def listar_productos(request):
     return render(request, 'mascotitas/producto/listar.html', data)
 
 def modificar_producto(request, id):
-
     producto = get_object_or_404(Producto, id=id)
-
     data = {
         'form': ProductoForm(instance=producto)
     }
