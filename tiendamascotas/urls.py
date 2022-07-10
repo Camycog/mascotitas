@@ -16,7 +16,10 @@ Including another URLconf
 from itertools import starmap
 from xml.dom.minidom import Document
 from django.contrib import admin
+<<<<<<< HEAD
 #from django.contrib.auth.views import login, logout
+=======
+>>>>>>> 6c53a89237c33f5651f23ae04a66fe944328e7b1
 from django.urls import path, include
 from django.conf import settings
 from mascotitas import views
