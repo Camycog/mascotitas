@@ -1,7 +1,10 @@
 {% extends 'mascotitas/base.html' %}
 {% block contenido %}
 {% load humanize %}
-<h2>Productos</h2>
+<h2>Pagina Principal</h2>
+
+
+
 <div class="producto">
     {%for p in productos %}
     <div class="producto">
@@ -18,5 +21,6 @@
         </div>
         </div>
     </div>
-    {% endfor %}
-    {% endblock %}
+
+{% endfor %}
+{% endblock %}
