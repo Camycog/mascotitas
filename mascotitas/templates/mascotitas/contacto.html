@@ -1,7 +1,13 @@
 {% extends 'mascotitas/base.html' %}
 {% block contenido %}
+
+<form action="" class="formulario_contacto" method="post">
+
+    {% cssrf_token %}
+
 {% load crispy_forms_tags %}
 <form action="" class="formulario_contacto" method="post">
+
 
     {% csrf_token %}
 
