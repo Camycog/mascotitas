@@ -1,7 +1,7 @@
 from itertools import product
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto
-from .forms import ContactoForm, CustomUserCreationForm, ProductoForm, CustomCreationForm
+from .forms import ContactoForm, CustomUserCreationForm, ProductoForm
 from django.contrib import messages
 from django.http import Http404
 
@@ -79,5 +79,11 @@ def registro(request):
     data = {
         'form': CustomUserCreationForm()
     }
+    if request.method == 'POST':
+        formulario = CustomUserCreationForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            #redirigir al home
+        data["form" ]= formulario   
     return render(request, 'mascotitas/registration/registro.html', data)
 
