@@ -9,7 +9,11 @@
             <div class="card-body">
                 <h2> Inicie Sesion</h2>
                 <hr>
-                <form action=""></form>
+                <form action="" method="post">
+                    {% csrf_token%}
+                    {{ form }}
+                    <input type="submit" value="Ingresar">
+                </form>
             </div>
         </div>         
     </div>
