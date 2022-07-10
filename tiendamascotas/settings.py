@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1' , 'pythonanywhere.com']
 
-MESSAGE_STORAGE = "django.contrib.messages.strorage.cookie.CookieStrorage"
+MESSAGES_STORAGE = "django.contrib.messages.strorage.cookie.CookieStrorage"
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'colorfield',
     'crispy_forms',
     'django.contrib.humanize',
+
 
     
 ]
