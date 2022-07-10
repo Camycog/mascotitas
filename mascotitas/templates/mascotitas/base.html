@@ -50,11 +50,24 @@
         <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
           <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
         </form>
-        {% if user.authenticated %}
-          <a href="{% url 'logout'%}">Cerrar Sesion</a>
-        {% else %}
-          <a href
+        {% if user.is_authenticated %}
+        <li>
+          <a class="nav-link text-nowrap" href="#">Hola, {{ user.username }}</a>
+        </li>
+        <li>
+          <a class="nav-link text-nowrap" href="{% url 'logout' %}">Cerrar sesion</a>
+        </li>
+        {% else %}             
+          <a class="nav-link text-nowrap" href="{% url 'login' %}">Iniciar sesion</a>
+        <li>
+          <a class="nav-link text-nowrap" href="{% url 'registro' %}">Registrate</a>
+        </li> 
+        </li>
         {% endif %}
+        <li>
+          <a class="nav-link text-nowrap" href="{% url 'home' %}">Home</a>
+        </li> 
+
       </div>
     </div>
   </header>
