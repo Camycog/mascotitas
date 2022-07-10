@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Producto
-from .models import Contacto
+from .forms import Contacto
 
 
 
