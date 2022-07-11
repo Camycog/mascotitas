@@ -22,6 +22,6 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('social-auth/', include('social_django.urls', namespace="social")),
     path('error_facebook', error_facebook, name="error_facebook"),
-    path('carrito/', carrito, name="carrito"),
+ 
 
 ]
