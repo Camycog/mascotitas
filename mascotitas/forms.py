@@ -12,7 +12,6 @@ class ContactoForm(forms.ModelForm):
         #fields = ["nombre", "correo", "tipo_consulta", "mensaje", "avisos"]
         fields = '__all__'
 
-
 class ProductoForm(forms.ModelForm):
 
     class Meta:
