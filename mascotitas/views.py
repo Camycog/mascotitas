@@ -8,6 +8,8 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets
 from .serializer import ProductoSerializer, MarcaSerializer
+from .carrito import Carrito
+
 
 def error_facebook(request):
     return render(request, 'registration/error_facebook.html')
@@ -117,3 +119,26 @@ def productos(request):
         'productos': productos
     }
     return render(request, 'mascotitas/productos.html', data)
+
+#cosas para el carrito
+def carrito(request):
+    productos = Producto.objects.all()
+    return render(request, 'mascotitas/carrito.html', {'productos':productos})
+
+def agregar_Pcarrito(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects(id=producto_id)
+    carrito.agregar(producto)
+    return redirect("productos")
+
+def elimnar_Pcarrito(request, producto_id):
+    carrito= Carrito(request)
+    producto= Producto.objects.get(id=producto_id)
+    carrito.restar(producto)
+    return redirect("carrito")
+
+
+def limpiar_Pcarrito(request):
+    carrito= Carrito(request)
+    carrito.limpiar()
+    return redirect("carrito")
