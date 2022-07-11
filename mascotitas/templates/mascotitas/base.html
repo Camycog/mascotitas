@@ -42,7 +42,16 @@
                       <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
                       Carrito
                     </a>
-                  </li>    
+                  </li>  
+                  <li>
+                    {% for auth in backends.associated %}
+
+                    {% if auth.provider == 'facebook' %}
+                        <img src="{{ auth.extra_data.picture.data.url }}" alt="" width="50" height="50">
+                    {% endif %}
+                
+                {% endfor %}
+                  </li>  
             </ul>
           </div>
         </div>

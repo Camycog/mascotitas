@@ -52,10 +52,15 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django.contrib.humanize',
     'rest_framework',
+    'social_django',
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
 X_FRAME_OPTIONS = "SAMEORIGIN"
+
+SOCIAL_AUTH_FACEBOOK_KEY = "5274712669259347"
+SOCIAL_AUTH_FACEBOOK_SECRET = "180f08be40e3ea80e6f0832bf5ffc816"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,6 +84,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends', 
+                'social_django.context_processors.login_redirect',
+
             ],
         },
     },
@@ -117,6 +125,19 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link'] 
+
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {  
+  'fields': 'id, name, email, picture.type(large), link'
+}
+
+
+SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [               
+    ('name', 'name'),
+    ('email', 'email'),
+    ('picture', 'picture'),
+    ('link', 'profile_url'),
+]
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -146,3 +167,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+

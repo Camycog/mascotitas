@@ -20,5 +20,6 @@ urlpatterns = [
     path('registro/', registro, name="registro"),
     path('productos/', productos, name="productos"),
     path('api/', include(router.urls)),
+    path('social-auth/', include('social_django.urls', namespace="social")),
 
 ]
