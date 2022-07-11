@@ -7,9 +7,11 @@ from django.http import Http404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets
-from .serializer import ProductoSerializer
+from .serializer import ProductoSerializer, MarcaSerializer
 
-
+class MarcaViewset(viewsets.ModelViewSet):
+    queryset = Marca.objects.all()
+    serializer_class = MarcaSerializer
 class ProductoViewset(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer

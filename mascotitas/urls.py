@@ -7,6 +7,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('producto', ProductoViewset)
+router.register('marca', MarcaViewset)
 
 
 urlpatterns = [
@@ -18,5 +19,6 @@ urlpatterns = [
     path('eliminar-producto/<id>/', eliminar_producto, name="eliminar_producto"),   
     path('registro/', registro, name="registro"),
     path('productos/', productos, name="productos"),
-    path('api/', include(router.urls)),    
+    path('api/', include(router.urls)),
+
 ]
