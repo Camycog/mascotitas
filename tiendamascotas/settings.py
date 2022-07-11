@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mascotitas',
-    'carrito,'
+    'carrito',
     'colorfield',
     'crispy_forms',
     'django.contrib.humanize',
