@@ -4,6 +4,7 @@ from .models import *
 from .forms import ContactoForm, CustomUserCreationForm, ProductoForm
 from django.contrib import messages
 from django.http import Http404
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -84,6 +85,7 @@ def registro(request):
             formulario.save()
             user = authenticate(username=formulario.cleaned_data("username"),password=formulario.cleaned_data("password1"))
             login(request, user)
+            messages.succes(request, "Te has registrado correctamente")
             return redirect(to="home")
         data["form" ]= formulario   
     return render(request, 'registration/registro.html', data)
