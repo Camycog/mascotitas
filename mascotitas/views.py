@@ -9,6 +9,9 @@ from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets
 from .serializer import ProductoSerializer, MarcaSerializer
 
+def error_facebook(request):
+    return render(request, 'registration/error_facebook.html')
+
 class MarcaViewset(viewsets.ModelViewSet):
     queryset = Marca.objects.all()
     serializer_class = MarcaSerializer
