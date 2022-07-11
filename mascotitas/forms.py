@@ -25,4 +25,4 @@ class ProductoForm(forms.ModelForm):
 class CustomUserCreationForm(UserCreationForm):
         class Meta:
             model = User
-            fields = 
+            fields = ['username',"first_name", "last_name","email","password1", "password2"]
