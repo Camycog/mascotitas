@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\D-Rex\Documents\GitHub\mascotitas\libentorno"
+VIRTUAL_ENV="C:\Users\D-Rex\Documents\GitHub\mascotitas-1\libentorno"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

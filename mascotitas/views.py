@@ -4,6 +4,7 @@ from .models import *
 from .forms import ContactoForm, CustomUserCreationForm, ProductoForm
 from django.contrib import messages
 from django.http import Http404
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -47,7 +48,7 @@ def listar_productos(request):
     data = {
         'productos': productos
     }
-    return render(request, 'mascotitas/producto/listar.html', data)
+    return render(request, 'producto/listar.html', data)
 
 def modificar_producto(request, id):
     producto = get_object_or_404(Producto, id=id)
@@ -66,7 +67,7 @@ def modificar_producto(request, id):
                 messages.success(request, "Modificado correctamente")
                 return redirect(to="listar_productos")
             data["form"] = formulario
-    return render(request, 'mascotitas/producto/modificar.html', data)
+    return render(request, 'producto/modificar.html', data)
 
 def eliminar_producto(request, id):
     producto = get_object_or_404(Producto, id=id)
@@ -84,6 +85,7 @@ def registro(request):
             formulario.save()
             user = authenticate(username=formulario.cleaned_data("username"),password=formulario.cleaned_data("password1"))
             login(request, user)
+            messages.succes(request, "Te has registrado correctamente")
             return redirect(to="home")
         data["form" ]= formulario   
     return render(request, 'registration/registro.html', data)
@@ -93,4 +95,4 @@ def productos(request):
     data = {
         'productos': productos
     }
-    return render(request, 'mascotitas/productos.html', data)
+    return render(request, 'productos.html', data)
