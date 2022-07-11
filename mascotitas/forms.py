@@ -3,6 +3,7 @@ from stat import FILE_ATTRIBUTE_NOT_CONTENT_INDEXED
 from django import forms
 from .models import Contacto, Producto
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class ContactoForm(forms.ModelForm):
 
@@ -22,4 +23,6 @@ class ProductoForm(forms.ModelForm):
             }
 
 class CustomUserCreationForm(UserCreationForm):
-    pass
+        class Meta:
+            model = User
+            fields = 
