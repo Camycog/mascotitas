@@ -1,8 +1,8 @@
 #bg {
-    background-image: url('../img/Fondo2.png');
+    background-image: url('../img/Fondo3.png');
     background-size: 90% 90%;
-    background-position: center center !important;
-    background-size: cover !important;
+    background-position: center ;
+
 }
 
 #title {
