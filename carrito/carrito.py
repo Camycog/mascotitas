@@ -1,6 +1,5 @@
 from http.client import PRECONDITION_FAILED
 
-
 class Carrito:
     def __init__(self, request):
         self.request = request
@@ -8,8 +7,8 @@ class Carrito:
         carrito = self.session.get("carrito")
         if not carrito: 
             carrito = self.session["carrito"]={}
-        else: 
-            self.carrito = carrito
+        #else: 
+        self.carrito = carrito
     
     def agregar_carrito(self, producto):
         if(str(producto.id) not in self.carrito.keys()):

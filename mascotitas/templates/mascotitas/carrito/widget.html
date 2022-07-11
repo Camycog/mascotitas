@@ -18,8 +18,8 @@
                     <td>{{ value.nombre}}</td>
                     <td>{{ value.cantidad}}</td>
                     <td>
-                        <a href="{% url 'carrito:agregar value.producto_id' %}" class="btn btn-sm btn-success">+</a>
-                        <a href="{% url 'carrito:restar value.producto_id' %}" class="btn btn-sm btn-success">-</a>
+                        <a href="{% url 'carrito:agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
+                        <a href="{% url 'carrito:restar' value.producto_id %}" class="btn btn-sm btn-success">-</a>
 
                         ${{value.precio}}
 
