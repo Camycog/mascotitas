@@ -25,8 +25,6 @@ class ProductoViewset(viewsets.ModelViewSet):
             productos = productos.filter(nombre__contains=nombre)
         return productos
 
-
-
 # Create your views here.
 def home(request):
     productos = Producto.objects.all()
@@ -115,4 +113,4 @@ def productos(request):
     data = {
         'productos': productos
     }
-    return render(request, 'productos.html', data)
+    return render(request, 'mascotitas/productos.html', data)

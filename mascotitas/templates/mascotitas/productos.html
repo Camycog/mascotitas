@@ -1,22 +1,7 @@
 {% extends 'mascotitas/base.html' %}
 {% block contenido %}
 {% load humanize %}
-<h2>Productos</h2>
-<div class="producto">
-    {%for p in productos %}
-    <div class="producto">
-        <div class="contenedor_producto" id="contenedor">
-            <div>
-            {% if p.imagen %}
-            <img src="{{ p.imagen.url }}" alt="imagen producto" width="20%" height="20%">
-            {% endif %}
-            <div class="detalle" >
-                <h5>{{ p.marca | capfirst }}</h5>
-                <h2>{{ p.nombre | title }}</h2>
-                <h3>${{ p.precio | intcomma }}</h3>
-            </div>
-        </div>
-        </div>
-    </div>
-    {% endfor %}
-    {% endblock %}
+
+<h1>Soy una pagina vacia, ayuda</h1>
+
+ {% endblock %}

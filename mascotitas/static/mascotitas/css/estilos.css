@@ -1,7 +1,14 @@
+* {
+    margin:0;
+    padding:0;
+}
+
 #bg {
     background-image: url('../img/Fondo3.png');
-    background-size: 90% 90%;
+    background-size: 90%;
     background-position: center ;
+    background-color:#EDF2F7;
+    font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -13,17 +20,25 @@
  
 }
 
-#item {
-    background:  #D1E6D5;
-    color: #8CBDBD;
-    justify-content: center;
-    align-items: center;
-    height: 10rem;
-    display: flex;
-}
-
 #owl-container{
     margin: auto;
     max-width: 200px;
 
+}
+
+input[type=text], input[type=email],
+input[type=number], input[type=password], 
+ select, textarea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #C5D8AB;
+}
+textarea {
+    resize: none;
+}
+
+.formulario_contacto {
+    width: 500px;
+    margin-top:50px;
 }
