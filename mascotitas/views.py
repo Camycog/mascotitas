@@ -94,18 +94,18 @@ def eliminar_producto(request, id):
     return redirect(to="listar_productos")
 
 def registro(request):
-    data = {
+    data= {
         'form': CustomUserCreationForm()
     }
     if request.method == 'POST':
         formulario = CustomUserCreationForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            user = authenticate(username=formulario.cleaned_data("username") , password=formulario.cleaned_data("password1"))
+            user = authenticate(username=formulario.cleaned_data["username"],password=formulario.cleaned_data["password1"])
             login(request, user)
-            messages.succes(request, "Te has registrado correctamente")
+            messages.success(request, "Te has registrado correctamente")
             return redirect(to="home")
-        data["form" ]= formulario   
+        data["form"] = formulario
     return render(request, 'registration/registro.html', data)
 
 def productos(request):
