@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'colorfield',
     'crispy_forms',
     'django.contrib.humanize'  
+    'rest_framework'
 ]
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
