@@ -6,6 +6,14 @@ from django.contrib import messages
 from django.http import Http404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from rest_framework import viewsets
+from .serializer import ProductoSerializer
+
+
+class ProductoViewset(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+
 
 # Create your views here.
 def home(request):
