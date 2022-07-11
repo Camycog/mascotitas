@@ -10,10 +10,11 @@
 <link rel="stylesheet" href="{% static 'mascotitas/css/estilos.css' %}">
 
 {%for p in productos %}
-<div class="card" style="width: 18rem;">
-    {% if p.imagen %}
+
+<div class="card" style="width: 18rem;">  
+        {% if p.imagen  %}
     <img src="{{ p.imagen.url }}" alt="imagen producto" width="80%" height="80%">
-    {% endif %}
+        {% endif %}
     <div class="card-body">
       <p class="card-text">
         <h5>{{ p.marca | capfirst }}</h5>
@@ -21,10 +22,12 @@
         <h3>${{ p.precio | intcomma }}</h3>
       </p>
     <div class="d-flex justify-contend-end">  
-    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary">Agregar</button>
     </div>
     </div>
-  </div>
-        {% endfor %}
+  </div> 
+
+     
+{% endfor %}
         <script src="{% static 'mascotitas/js/bootstrap.bundle.min.js' %}"></script>
  {% endblock %}
