@@ -103,7 +103,7 @@ def registro(request):
         formulario = CustomUserCreationForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            user = authenticate(username=formulario.cleaned_data("username"),password=formulario.cleaned_data("password1"))
+            user = authenticate(username=formulario.cleaned_data("username") , password=formulario.cleaned_data("password1"))
             login(request, user)
             messages.succes(request, "Te has registrado correctamente")
             return redirect(to="home")
