@@ -17,6 +17,13 @@
                 <tr class="text-center">
                     <td>{{ value.nombre}}</td>
                     <td>{{ value.cantidad}}</td>
+                    <td>
+                        <a href="{% url 'carrito:agregar value.producto_id' %}" class="btn btn-sm btn-success">+</a>
+                        <a href="{% url 'carrito:restar value.producto_id' %}" class="btn btn-sm btn-success">-</a>
+
+                        ${{value.precio}}
+
+                    </td>
                 </tr>       
             {% endfor%}
         {% else%}
@@ -29,4 +36,13 @@
             </tr>    
         {% endif %}    
     </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3">
+                Total: ${{ importe_total_carrito }}
+            </td>
+        </tr>
+    </tfoot>
+
 </table>
