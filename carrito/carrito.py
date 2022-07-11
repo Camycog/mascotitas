@@ -40,8 +40,13 @@ class Carrito:
         for key, value in self.carrito.items():
             if key==str(producto.id):
                 value["cantidad"]=value["cantidad"]-1
+                if value["cantidad"] < 1:
+                    self.eliminar_carrito(producto)
                 break
         self.guardar_carrito()
                                                    
+    def limpiar_carrito(self):
+        self.session["carrito"]={}
+        self.session.modified = True
 
 
