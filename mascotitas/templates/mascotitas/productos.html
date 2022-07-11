@@ -9,25 +9,33 @@
 <link rel="stylesheet" href="{% static 'mascotitas/css/bootstrap.min.css' %}">
 <link rel="stylesheet" href="{% static 'mascotitas/css/estilos.css' %}">
 
-{%for p in productos %}
 
-<div class="card" style="width: 18rem;">  
-        {% if p.imagen  %}
-    <img src="{{ p.imagen.url }}" alt="imagen producto" width="80%" height="80%">
-        {% endif %}
-    <div class="card-body">
-      <p class="card-text">
-        <h5>{{ p.marca | capfirst }}</h5>
-        <h2>{{ p.nombre | title }}</h2>
-        <h3>${{ p.precio | intcomma }}</h3>
-      </p>
-    <div class="d-flex justify-contend-end">  
-    <button type="button" class="btn btn-sm btn-outline-secondary">Agregar</button>
+<div class="container">
+<div class="row justify-content-md-center">
+  <div class="col-md-auto">
+    <div class="row">
+      {%for p in productos %}
+        <div class="col-md-3 col-sm-12 col-lg-4">
+          <div class="card" style=" margin: 5px;">
+            <img src="{{ p.imagen.url }}" style="width: 100%;" class="card-img-top" alt="{{ p.name}}" />
+            <div class="card-body">
+              <h5 class="card-tittle"> {{ p.nombre }}</h5>
+              <p class="card-text">
+                <h5>{{ p.marca | capfirst }}</h5>
+                <h5>${{ p.precio | intcomma }}</h5>
+              </p>             
+            </div>
+            <div class="card-footer text-center">
+              <a href="#" class="btn btn-success">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
     </div>
-    </div>
-  </div> 
+  </div>
+</div>
+</div>
+  
 
-     
-{% endfor %}
         <script src="{% static 'mascotitas/js/bootstrap.bundle.min.js' %}"></script>
  {% endblock %}
