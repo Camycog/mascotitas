@@ -50,8 +50,8 @@ INSTALLED_APPS = [
     'mascotitas',
     'colorfield',
     'crispy_forms',
-    'django.contrib.humanize'  
-    'rest_framework'
+    'django.contrib.humanize',
+    'rest_framework',
 ]
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
