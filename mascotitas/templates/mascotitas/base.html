@@ -102,6 +102,10 @@
                 <use xlink:href="#bootstrap"></use>
               </svg>
             </a>
+            <div class="image-content d-inline-block">
+              <img>
+            
+            </div>
             <span class="mb-3 mb-md-0 text-muted">© Team Camila, Libena y Adrian ProgramacionWeb, Inc</span>
           </div>
         </footer>
@@ -125,6 +129,14 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
         
+        <script> 
+        $(document).ready(function(){
+          $.getJSON("https://dog.ceo/api/breeds/image/random", function (data) {
+          $(".breeds-image-random pre").html(JSON.stringify(data, null, 4));
+          $(".image-content").html("<img src='" + data.message + "'style=\"width: 100px; height: 100px\">");
+          });
+        });
+        </script>
         {% endblock %}
 
 </body>
