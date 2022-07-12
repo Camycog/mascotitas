@@ -1,5 +1,7 @@
 from itertools import product
 from django.shortcuts import render, redirect, get_object_or_404
+
+from blog.models import Post
 from .models import *
 from .forms import ContactoForm, CustomUserCreationForm, ProductoForm
 from django.contrib import messages
@@ -118,3 +120,4 @@ def productos(request):
         'productos': productos
     }
     return render(request, 'mascotitas/productos.html', data)
+
