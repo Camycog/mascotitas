@@ -6,10 +6,9 @@ class Carrito:
         self.session = request.session
         carrito = self.session.get("carrito")
         if not carrito: 
-            carrito = self.session["carrito"]={}
-        #else: 
+            carrito = self.session["carrito"]={}       
         self.carrito = carrito
-    
+      
     def agregar_carrito(self, producto):
         if(str(producto.id) not in self.carrito.keys()):
             self.carrito[producto.id]={
@@ -22,6 +21,7 @@ class Carrito:
             for key, value in self.carrito.items():
                 if key==str(producto.id):
                     value["cantidad"]=value["cantidad"]+1
+                    value["precio"]=float(value["precio"])+producto.precio
                     break
         self.guardar_carrito()
 

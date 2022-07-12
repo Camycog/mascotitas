@@ -1,8 +1,5 @@
-* {
-    margin:0;
-    padding:0;
-}
 
+/* css para la base*/
 #bg {
     background-image: url('../img/Fondo3.png');
     background-size: 90%;
@@ -12,6 +9,7 @@
 
 }
 
+/* para el carrusel */
 #title {
     text-align: center;
     margin: 100px;
@@ -26,6 +24,7 @@
 
 }
 
+/* formularios*/
 input[type=text], input[type=email],
 input[type=number], input[type=password], 
  select, textarea {
@@ -42,3 +41,12 @@ textarea {
     width: 500px;
     margin-top:50px;
 }
+
+/* Productos */
+#card-tittle{
+    text-align: center;
+}
+card-text{
+    text-align: end;
+}
+
