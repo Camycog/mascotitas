@@ -1,4 +1,16 @@
-<table class="table table-bordered">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mascotitas/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mascotitas/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mascotitas/css/estilos.css' %}">
+</head>
+<table class="table table-sm table-bordered border-light" style="background-color: #FBE1EE; ">
     <thead>
         <tr>
             <th colspan="3" class="text-center">
@@ -43,3 +55,9 @@
         </tr>
     </tfoot>
 </table>
+
+<script src="{% static 'mascotitas/js/jquery.min.js' %}"></script>
+<script src="{% static 'mascotitas/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'mascotitas/js/main.js' %}"></script>
+
+</html>
