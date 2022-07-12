@@ -119,4 +119,3 @@ def productos(request):
         'productos': productos
     }
     return render(request, 'mascotitas/productos.html', data)
-

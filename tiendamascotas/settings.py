@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'rest_framework',
     'social_django',
+    'carrito',
 
 ]
 
@@ -87,6 +88,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends', 
                 'social_django.context_processors.login_redirect',
+                'carrito.context_processor.importe_total_carrito',
                 
             ],
         },
