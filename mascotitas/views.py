@@ -79,7 +79,7 @@ def modificar_producto(request, id):
         'form': ProductoForm(instance=producto)
     }
     if request.method == 'POST':
-        producto = get_object_or_404(Producto, id)
+        producto = get_object_or_404(Producto, id=id)
         data = {
             'form': ProductoForm(instance=producto)
         }

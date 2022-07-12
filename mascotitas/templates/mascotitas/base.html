@@ -39,7 +39,7 @@
               </li>
               {% if user.is_authenticated  and user.is_staff  %}
                   <li>
-                    <a href="#" class="nav-link text-secondary">
+                    <a href="{% url 'listar_productos' %}" class="nav-link text-secondary">
                       <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
                       Administrar productos
                     </a>
@@ -78,22 +78,10 @@
         </div>
       </div>
     </header>
-
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      {% if message %}
-        {% for m in messages%}
-          <script>
-            Swal.fire({
-                "title": "Felicitaciones",
-                "text": "{{ m }}",
-                "icon": "success"
-            })
-          </script>
-        {% endfor %}
-      {% endif %}
-  
+ 
     {% block contenido%}
     {% endblock %} 
+
     <footer>
       <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -106,6 +94,20 @@
             <span class="mb-3 mb-md-0 text-muted">© Team Camila, Libena y Adrian ProgramacionWeb, Inc</span>
           </div>
         </footer>
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        {% if message %}
+          {% for m in messages%}
+            <script>
+              Swal.fire({
+                  "title": "Felicitaciones",
+                  "text": "{{ m }}",
+                  "icon": "success"
+              })
+            </script>
+          {% endfor %}
+        {% endif %}
+
         {% block js %}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"

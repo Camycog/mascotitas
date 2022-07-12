@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1' , 'pythonanywhere.com']
 
-MESSAGES_STORAGE = "django.contrib.messages.strorage.cookie.CookieStrorage"
+MESSAGES_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
 
 LOGIN_REDIRECT_URL = '/'
