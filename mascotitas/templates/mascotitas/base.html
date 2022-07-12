@@ -96,8 +96,8 @@
         </footer>
 
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        {% if message %}
-          {% for m in messages%}
+        {% if messages %}
+          {% for m in messages %}
             <script>
               Swal.fire({
                   "title": "Felicitaciones",
