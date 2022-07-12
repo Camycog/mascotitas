@@ -7,7 +7,7 @@ def blog(request):
     data = {
         'post' : post
     }
-    return(render(request, "mascotitas/home.html", data))
+    return(render(request, "blog/blog.html", data))
 
 
 

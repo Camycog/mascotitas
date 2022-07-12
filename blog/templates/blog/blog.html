@@ -1,0 +1,72 @@
+{% extends 'mascotitas/base.html' %}
+{% block contenido %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mascotitas/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mascotitas/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mascotitas/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mascotitas/css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'mascotitas/css/blog.css' %}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/blog/">    
+
+
+</head>
+<body>
+    <div class="owl-container">
+        <div class="owl-carousel owl-theme">
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/5.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/6.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/15.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/12.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/16.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/1.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/17.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/18.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/19.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/23.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/25.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/4.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/27.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/28.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/29.webp' %}"></h4></div>
+        <div class="item" id="item"><h4><img src="{% static 'mascotitas/img/10.webp' %}"></h4></div>
+    </div>
+    </div>
+<br>
+<br> 
+<main class="container" >
+    <div class="p-4 p-md-5 mb-4 text-black rounded" style="background-color: #D1E6D5;">
+    {% for post in post %}
+    <div class="card mb-3" style="max-width: 80%;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{ post.imagen}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.titulo }}</h5>
+            <p class="card-text">{{ post.contenido }}</p>
+            <p class="card-text"><small class="text-muted">{{ post.update}}</small></p>
+        </div>
+      </div>
+      </div>
+    </div>
+      {% endfor %}
+    </div>    
+    </div>
+</main>
+
+
+<script src="{% static 'mascotitas/js/jquery.min.js' %}"></script>
+<script src="{% static 'mascotitas/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'mascotitas/js/main.js' %}"></script>
+
+</html>
+{% endblock %}

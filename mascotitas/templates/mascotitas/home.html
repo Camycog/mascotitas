@@ -43,23 +43,7 @@
 <br> 
 <main class="container" >
     <div class="p-4 p-md-5 mb-4 text-black rounded" style="background-color: #D1E6D5;">
-    {% for post in post %}
-    <div class="card mb-3" style="max-width: 80%;">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="{{ post.imagen}}" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">{{ post.titulo }}</h5>
-            <p class="card-text">{{ post.contenido }}</p>
-            <p class="card-text"><small class="text-muted">{{ post.update}}</small></p>
-        </div>
-      </div>
-      </div>
-    </div>
-      {% endfor %}
-    </div>    
+
     </div>
 </main>
 
