@@ -1,22 +1,59 @@
 {% extends 'mascotitas/base.html' %}
 {% block contenido %}
 {% load humanize %}
-<h2>Productos</h2>
-<div class="producto">
-    {%for p in productos %}
-    <div class="producto">
-        <div class="contenedor_producto" id="contenedor">
-            <div>
-            {% if p.imagen %}
-            <img src="{{ p.imagen.url }}" alt="imagen producto" width="20%" height="20%">
-            {% endif %}
-            <div class="detalle" >
-                <h5>{{ p.marca | capfirst }}</h5>
-                <h2>{{ p.nombre | title }}</h2>
-                <h3>${{ p.precio | intcomma }}</h3>
-            </div>
-        </div>
-        </div>
+
+<title>Galeria de Productos</title>
+{% load static %}
+<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+<link rel="stylesheet" href="{% static 'mascotitas/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'mascotitas/css/estilos.css' %}">
+
+
+
+<div class="container-fluid">
+  <div class="col-md-auto"></div>
+    <div id="carrito">
+      <div style="float:right;">      
+    {% if request.user.is_authenticated%}
+      {% include "mascotitas/carrito/widget.html" %}
+    {% else %}
+    <div class="col-md-auto"></div>
+    <div id="mensaje">
+      <p class="text-danger bg-dark">
+      Debe Iniciar sesion para <br>
+      poder ver el carrito</p>
     </div>
-    {% endfor %}
-    {% endblock %}
+      </div>
+    {% endif %}
+      </div>
+    </div>
+  </div>
+
+<div class="row justify-content-md-center">
+  <div class="col-md-auto">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {%for p in productos %}
+        <div class="col-md-3 col-sm-12 col-lg-4">
+          <div class="card h-100" style=" margin: 5px 5px;">
+            <img src="{{ p.imagen.url }}" style="width: 100%;" class="card-img-top" alt="{{ p.name}}" />
+            <div class="card-body ">
+              <h5 class="card-tittle"> {{ p.nombre }}</h5>
+              <p class="card-text">
+                <h5>{{ p.marca | capfirst }}</h5>
+                <h5>${{ p.precio | intcomma }}</h5>  </p>    
+                <p class="card-text">{{ p.descripcion | capfirst }}</p>
+                      
+            </div>
+            <div class="card-footer text-center">
+              <a href="{% url 'carrito:agregar' p.id %}" class="btn btn-success">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</div>
+  
+<script src="{% static 'mascotitas/js/bootstrap.bundle.min.js' %}"></script>
+ {% endblock %}

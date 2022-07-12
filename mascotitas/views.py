@@ -1,11 +1,36 @@
 from itertools import product
 from django.shortcuts import render, redirect, get_object_or_404
+
+from blog.models import Post
 from .models import *
 from .forms import ContactoForm, CustomUserCreationForm, ProductoForm
 from django.contrib import messages
 from django.http import Http404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from rest_framework import viewsets
+from .serializer import ProductoSerializer, MarcaSerializer
+
+
+
+def error_facebook(request):
+    return render(request, 'registration/error_facebook.html')
+
+class MarcaViewset(viewsets.ModelViewSet):
+    queryset = Marca.objects.all()
+    serializer_class = MarcaSerializer
+class ProductoViewset(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+
+    def get_queryset(self):
+        productos = Producto.objects.all()
+
+        nombre = self.request.GET.get('nombre')
+
+        if nombre:
+            productos = productos.filter(nombre__contains=nombre)
+        return productos
 
 # Create your views here.
 def home(request):
@@ -24,10 +49,9 @@ def contacto(request):
         formulario = ContactoForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"] = "Contacto guardado"
+            messages.success(request, 'Guardado correctamente')
         else:
             data["form"] = formulario
-
     return render(request, 'mascotitas/contacto.html', data)
 
 def agregar_producto(request):
@@ -38,7 +62,7 @@ def agregar_producto(request):
         formulario = ProductoForm(data=request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"] = "Guardado correctamente"
+            messages.success(request, 'Producto guardado correctamente.')
         else:
             data["form"] = formulario
     return render(request, 'mascotitas/producto/agregar.html', data)
@@ -48,7 +72,7 @@ def listar_productos(request):
     data = {
         'productos': productos
     }
-    return render(request, 'producto/listar.html', data)
+    return render(request, 'mascotitas/producto/listar.html', data)
 
 def modificar_producto(request, id):
     producto = get_object_or_404(Producto, id=id)
@@ -56,7 +80,7 @@ def modificar_producto(request, id):
         'form': ProductoForm(instance=producto)
     }
     if request.method == 'POST':
-        producto = get_object_or_404(Producto, id)
+        producto = get_object_or_404(Producto, id=id)
         data = {
             'form': ProductoForm(instance=producto)
         }
@@ -64,30 +88,30 @@ def modificar_producto(request, id):
             formulario = ProductoForm(data=request.POST, instance=producto, files=request.FILES)
             if formulario.is_valid():
                 formulario.save()
-                messages.success(request, "Modificado correctamente")
+                messages.success(request, 'El producto fue modificado.')
                 return redirect(to="listar_productos")
             data["form"] = formulario
-    return render(request, 'producto/modificar.html', data)
+    return render(request, 'mascotitas/producto/modificar.html', data)
 
 def eliminar_producto(request, id):
     producto = get_object_or_404(Producto, id=id)
     producto.delete()
-    messages.success(request, "Eliminado correctamente")
+    messages.success(request, 'Eliminado correctamente.')
     return redirect(to="listar_productos")
 
 def registro(request):
-    data = {
+    data= {
         'form': CustomUserCreationForm()
     }
     if request.method == 'POST':
         formulario = CustomUserCreationForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            user = authenticate(username=formulario.cleaned_data("username"),password=formulario.cleaned_data("password1"))
+            user = authenticate(username=formulario.cleaned_data["username"],password=formulario.cleaned_data["password1"])
             login(request, user)
-            messages.succes(request, "Te has registrado correctamente")
+            messages.success(request, 'Te has registrado correctamente.')
             return redirect(to="home")
-        data["form" ]= formulario   
+        data["form"] = formulario
     return render(request, 'registration/registro.html', data)
 
 def productos(request):
@@ -95,4 +119,5 @@ def productos(request):
     data = {
         'productos': productos
     }
-    return render(request, 'productos.html', data)
+    return render(request, 'mascotitas/productos.html', data)
+

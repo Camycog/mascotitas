@@ -1,10 +1,15 @@
+
+/* css para la base*/
 #bg {
-    background-image: url('../img/Fondo.png');
-    background-size: 90% 90%;
-    background-position: center center !important;
-    background-size: cover !important;
+    background-image: url('../img/Fondo3.png');
+    background-size: 90%;
+    background-position: center ;
+    background-color:#EDF2F7;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
+/* para el carrusel */
 #title {
     text-align: center;
     margin: 100px;
@@ -13,17 +18,85 @@
  
 }
 
-#item {
-    background:  #D1E6D5;
-    color: #8CBDBD;
-    justify-content: center;
-    align-items: center;
-    height: 10rem;
-    display: flex;
-}
-
 #owl-container{
     margin: auto;
     max-width: 200px;
 
 }
+
+/* formularios*/
+input[type=text], input[type=email],
+input[type=number], input[type=password], 
+ select, textarea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #8CBDBD
+}
+textarea {
+    resize: none;
+}
+
+.formulario_contacto {
+    width: 500px;
+    margin-top:50px;
+}
+
+/* Productos */
+#card-tittle{
+    text-align: center;
+}
+card-text{
+    text-align: end;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
