@@ -17,7 +17,13 @@
     {% if request.user.is_authenticated%}
       {% include "mascotitas/carrito/widget.html" %}
     {% else %}
-      Debe Iniciar sesion para poder ver el carrito
+    <div class="col-md-auto"></div>
+    <div id="mensaje">
+      <p class="text-danger bg-dark">
+      Debe Iniciar sesion para <br>
+      poder ver el carrito</p>
+    </div>
+      </div>
     {% endif %}
       </div>
     </div>
