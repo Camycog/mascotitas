@@ -133,7 +133,7 @@
         $(document).ready(function(){
           $.getJSON("https://dog.ceo/api/breeds/image/random", function (data) {
           $(".breeds-image-random pre").html(JSON.stringify(data, null, 4));
-          $(".image-content").html("<img src='" + data.message + "'style=\"width: 100px; height: 100px\">");
+          $(".image-content").html("<img src='" + data.message + "'style=\"width: 80px; height: 80px\">");
           });
         });
         </script>
