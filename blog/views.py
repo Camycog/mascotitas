@@ -5,7 +5,7 @@ from blog.models import Post
 def blog(request):
     post = Post.objects.all()
     data = {
-        'pots' : post
+        'post' : post
     }
     return(render(request, "mascotitas/home.html", data))
 
