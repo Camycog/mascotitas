@@ -46,9 +46,9 @@
     {% for post in post %}
     <div class="card mb-3" style="max-width: 90%;">
       <div class="row g-0">
-        <div class="col-md-4">
+        <div class="col-md-4 h-100">
           {% if post.imagen_blog%}
-          <img src="{{ post.imagen_blog.url}}" class="img-fluid rounded-start" alt="">
+          <img src="{{ post.imagen_blog.url}}" class="img-fluid rounded-start d-block" alt="">
           {% endif %}
         </div>
         <div class="col-md-8">
