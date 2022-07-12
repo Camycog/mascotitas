@@ -44,10 +44,12 @@
 <main class="container" >
     <div class="p-4 p-md-5 mb-4 text-black rounded" style="background-color: #D1E6D5;">
     {% for post in post %}
-    <div class="card mb-3" style="max-width: 80%;">
+    <div class="card mb-3" style="max-width: 90%;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="{{ post.imagen}}" class="img-fluid rounded-start" alt="...">
+          {% if post.imagen_blog%}
+          <img src="{{ post.imagen_blog.url}}" class="img-fluid rounded-start" alt="">
+          {% endif %}
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -59,8 +61,8 @@
       </div>
     </div>
       {% endfor %}
-    </div>    
-    </div>
+    </div> 
+  </div>
 </main>
 
 

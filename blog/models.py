@@ -14,11 +14,12 @@ class Categoria(models.Model):
 
     def __str__(self):
         return self.nombre
+        
 
 class Post(models.Model):
     titulo=models.CharField(max_length=50)
     contenido=models.TextField()
-    imagen=models.ImageField(upload_to="blog", null=True, blank=True)
+    imagen_blog=models.ImageField(upload_to="blog", null=True, blank=True)
     categorias=models.ManyToManyField(Categoria)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now_add=True)
