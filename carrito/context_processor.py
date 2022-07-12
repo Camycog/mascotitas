@@ -4,4 +4,4 @@ def importe_total_carrito(request):
         if "carrito" in request.session.keys():
             for key, value in request.session["carrito"].items():
                 total += int(value["precio"])
-    return {"total_carrito": total}
+    return {"importe_total_carrito": total}
