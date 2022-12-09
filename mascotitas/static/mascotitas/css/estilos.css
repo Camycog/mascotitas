@@ -1,10 +1,10 @@
 
 /* css para la base*/
 #bg {
-    background-image: url('../img/Fondo3.png');
+    background-image: url('');
     background-size: 90%;
     background-position: center ;
-    background-color:#EDF2F7;
+    background-color:white;
     font-family: 'Open Sans', sans-serif;
 
 }
